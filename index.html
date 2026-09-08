@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You 🤍</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: sans-serif;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+        }
+        h2 {
+            color: #d32f2f;
+            padding: 0 20px;
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 100%;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+            z-index: 10;
+        }
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #d32f2f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>မိန်းမကို စိတ်ကောက်တော့နဲ့နော် 🥺<br>မနေ့ညက မိန်းမ ပစ်ထားသလို ဖြစ်သွားရင် တောင်းပန်ပါတယ်နော် ချစ်ယေး 😖 များကြီးချစ်တယ်နော် 🤪 အာဘွား 💕</h2>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="sayYes()">စိတ်ပြေပါပြီ 💚</button>
+        <button id="noBtn" onmouseover="moveNo()" ontouchstart="moveNo()" onclick="moveNo()">မပြေဘူး 😜</button>
+    </div>
+
+    <div id="message"></div>
+
+    <script>
+        function moveNo() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - 120);
+            const y = Math.random() * (window.innerHeight - 100);
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function sayYes() {
+            document.querySelector('.buttons').style.display = 'none';
+            document.querySelector('h2').style.display = 'none';
+            document.getElementById('message').innerHTML = "ဟီးဟီး သိပါတယ်၊ ချစ်တယ်နော် ကိုကိုရေ! 🥰💕";
+        }
+    </script>
+</body>
+  </html>
+
